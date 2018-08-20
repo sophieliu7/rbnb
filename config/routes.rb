@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  resources :tools
+  resources :tools do
+    resources :reservations
+  end
   devise_for :users
 
 
