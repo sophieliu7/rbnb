@@ -6,4 +6,5 @@ class User < ApplicationRecord
   has_many :tools
   # validates :first_name, presence: true
   # validates :last_name, presence: true
+  has_many :reservations
 end
