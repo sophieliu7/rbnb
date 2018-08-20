@@ -3,17 +3,13 @@
 
   <h1>Tool availables (<%= @tools.length %>)</h1>
 
-
-
   <% @tools.each do |tool| %>
-
-
 
   <div class="row">
     <div class="col-xs-12 col-sm-4">
       <!-- insert <div class="card"> -->
         <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
-          <div class="card-category"> <%= tool.place %> </div>
+          <div class="card-category"> <%= tool.price_per_day %> </div>
           <div class="card-description">
             <h2> <%= tool.name %> </h2>
             <p> <%= tool.description %> </p>
