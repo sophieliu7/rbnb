@@ -4,14 +4,14 @@
   justify-content: center;
   height: 200px;
   width: 100%;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
+  border-top: 1px solid #8e9eab;
+  border-bottom: 1px solid #8e9eab;
   margin: 70px 0;
 }
 .breaking-photo {
   width: 400px;
   height:175px;
-  background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://kitt.lewagon.com/placeholder/cities/berlin');
+  background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= asset_path "flexbox-pic.jpg" %>');
   background-size: cover;
   margin: 0 30px;
 }
