@@ -1,2 +1,11 @@
 <h1>Tools#edit</h1>
 <p>Find me in app/views/tools/edit.html.erb</p>
+
+
+<%= simple_form_for @tool do |f| %>
+  <%= f.input :name %>
+  <%= f.input :price_per_day %>
+  <%= f.input :description %>
+  <%= f.input :place %>
+  <%= f.submit "add a tool", class: "btn btn-primary" %>
+<% end %>
