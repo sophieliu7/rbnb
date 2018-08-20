@@ -4,5 +4,5 @@ class Reservation < ApplicationRecord
 
   validates :start_date, presence: true
   validates :duration, presence: true, numericality: { only_integer: true }
-  validates :total_price, presence: true
+  # validates :total_price, presence: true
 end
