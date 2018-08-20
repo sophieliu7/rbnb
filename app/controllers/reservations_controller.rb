@@ -7,6 +7,7 @@ end
 
 def new
   @reservation = Reservation.new
+  reservation.user = current_user
 end
 
 def create
