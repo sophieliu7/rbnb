@@ -1,33 +1,37 @@
 <div class="container">
 
 
-
+  <div class="tool-navbar"></div>
 
   <div class="tool-container">
-    <% if @tool.photo.url.nil? %>
-      <% url = cl_image_tag("qkdcyx2j5vajhsqdsd1o.jpg", crop: :fill) %>
-    <% else %>
-      <% url = cl_image_path(@tool.photo, crop: :fill) %>
-    <% end %>
-
-      <div class="tool-picture text-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<% url %>')" >
+    <div class="row">
+      <div class="col-md-6">
+        <% if @tool.photo.url.nil? %>
+          <% url = cl_image_tag("qkdcyx2j5vajhsqdsd1o.jpg", crop: :fill) %>
+        <% else %>
+          <% url = cl_image_path(@tool.photo, crop: :fill) %>
+        <% end %>
+        <div class="tool-picture text-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<% url %>')" ></div>
       </div>
-
-    <div class="tool-content">
-      <div class="tool-title">
-        <img class="tool-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
-        <h1><%= @tool.name.capitalize %></h1>
-        <h4><%= @tool.place %></h4>
-      </div>
-      <div class="tool-description">
-        <p><%= @tool.description %></p>
-      </div>
-      <div class="tool-form">
-        <h2><%= @tool.price_per_day %>€ per day</h2>
+      <div class="col-md-6">
+        <div class="row tool-content">
+            <div class="tool-title">
+              <img class="tool-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+              <h1><%= @tool.name.capitalize %></h1>
+            </div>
+            <div class="tool-info">
+              <h4><%= @tool.place %></h4>
+              <h5><%= @tool.price_per_day %>€ per day</h5>
+            </div>
+            <div class="tool-description">
+              <p><%= @tool.description %></p>
+            </div>
+            <div class="tool-form">
+                <%= render "reservations/form_new", reservation: @reservation %>
+            </div>
+        </div>
       </div>
     </div>
-
-  </div>
 
 
  <!-- <%= @tool.name %>
