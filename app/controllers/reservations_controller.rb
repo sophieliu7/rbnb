@@ -1,4 +1,5 @@
 class ReservationsController < ApplicationController
+
   def index
     @reservations = policy_scope(Reservation)
     @tool = Tool.find(params[:tool_id])
@@ -7,7 +8,7 @@ class ReservationsController < ApplicationController
   def new
     @reservation = Reservation.new
     @tool = Tool.find(params[:tool_id])
-    authorize @tool
+    authorize @reservation
   end
 
   def create
