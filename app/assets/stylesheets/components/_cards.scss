@@ -8,7 +8,7 @@
 
 
 .card {
-  height: 175px;
+  height: 220px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   background-position: center;
@@ -30,6 +30,25 @@
   font-size: 15px;
   text-transform: uppercase;
 }
+
+.card-place{
+  position: absolute;
+  top: 15px;
+  left: 120px;
+  font-size: 10px;
+  font-color: black;
+}
+
+.card-username{
+  position: absolute;
+  top: 50px;
+  right: 15px;
+  font-size: 10px;
+  font-color: #FFF;
+}
+
+
+
 .card-description {
   position: absolute;
   bottom: 10px;
@@ -43,6 +62,7 @@
   opacity: 0.7;
   font-weight: lighter;
 }
+
 .card-link {
   position: absolute;
   top: 0;
@@ -57,8 +77,28 @@
   opacity: 0.1;
 }
 
+
+
+.pricehighlights{
+
+background-color:#339933;
+padding: 3px;
+border-radius: 3px;
+
+}
+
+.cityhighlights{
+
+padding: 3px;
+border-radius: 3px;
+border: 1px solid #FFF;
+
+}
+
+
 .card-reservation {
   box-shadow: 1px 2px 4px #918c8c;
   margin: 5px;
   padding: 40px;
 }
+

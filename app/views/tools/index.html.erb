@@ -8,14 +8,29 @@
   <% @tools.each do |tool| %>
     <div class="col-xs-12 col-sm-4">
       <!-- insert <div class="card"> -->
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
-          <div class="card-category"> <%= tool.price_per_day %> € / jour </div>
+
+      <% if tool.photo.url.nil? %>
+      <% aphoto = "http://res.cloudinary.com/appfilesxkz/image/upload/v1534519532/fi2abkz8rmi3nrysbfrd.jpg" %>
+      <% else %>
+      <% aphoto = tool.photo %>
+      <% end %>
+
+
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path aphoto, height: 300, width: 400 , crop: :fill %>'); background-size: auto 100% ; background-position: left top; ">
+        <div class="card-category">
+          <p class="pricehighlights"><%= tool.price_per_day %> € / jour</p></div>
+        <div class="card-place">
+        <p class="cityhighlights"><%= tool.place %></p>
+        </div>
           <div class="card-description">
             <h2> <%= tool.name %> </h2>
             <p> <%= tool.description.first(110) %> </p>
           </div>
           <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
           <%= link_to " ", tool_path(tool.id), class:"card-link" %>
+          <div class="card-username">
+          <p><%= tool.user.name %></p>
+          </div>
         </div>
       </div>
         <% end %>
