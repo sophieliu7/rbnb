@@ -1,0 +1,33 @@
+.tool-container {
+  // position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+.tool-picture {
+  flex-basis: 500px;
+  min-height: 600px;
+  background-size: cover !important;
+  margin-right: 20px;
+}
+.tool-content {
+
+}
+.tool-title {
+  position: relative;
+}
+.tool-user {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 60px;
+  border-radius: 50%;
+}
+.tool-description {
+
+}
+.tool-form {
+
+}

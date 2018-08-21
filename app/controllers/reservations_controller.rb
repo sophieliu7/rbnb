@@ -1,11 +1,14 @@
 class ReservationsController < ApplicationController
+
   def index
-    @reservations = Reservation.where(user: current_user)
+    @reservations = policy_scope(Reservation)
+    @tool = Tool.find(params[:tool_id])
   end
 
   def new
     @reservation = Reservation.new
     @tool = Tool.find(params[:tool_id])
+    authorize @reservation
   end
 
   def create
@@ -13,6 +16,7 @@ class ReservationsController < ApplicationController
     @tool = Tool.find(params[:tool_id])
     @reservation.user = current_user
     @reservation.tool = @tool
+    authorize @reservation
     if @reservation.save
       redirect_to tool_path(@tool)
     else
@@ -22,6 +26,7 @@ class ReservationsController < ApplicationController
 
   def destroy
     @reservation = Reservation.find(reservation_params)
+    authorize @reservation
     @reservation.destroy
   end
 
