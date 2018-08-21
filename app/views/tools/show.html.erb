@@ -1,15 +1,28 @@
 <div class="container">
 
+  <div class="grid">
+    <% if @tool.photo.url.nil? %>
+      <%= url = cl_image_tag("qkdcyx2j5vajhsqdsd1o.jpg", :gravity=>"west", :height=>3456, :width=>2761, :x=>1954, :y=>0, :crop=>"crop") %>
+    <% else %>
+      <%= url = cl_image_path(@tool.photo, crop: :fill) %>
+    <% end %>
+    <div class="grid-picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= url %>');">
+      coucou
+    </div>
+    <div class="grid-title">
+      <h1><%= @tool.name %></h1>
+      <h2><%= @tool.description %></h2>
+    </div>
+  </div>
 
-<h1>Tools#show</h1>
 
-<%= @tool.name %>
-<br>
-<%= @tool.price_per_day %>
-<br>
-<%= @tool.description %>
-<br>
-<%= @tool.place %>
-<br>
-<%= @tool.user.first_name %>
+  <%= @tool.name %>
+  <br>
+  <%= @tool.price_per_day %>
+  <br>
+  <%= @tool.description %>
+  <br>
+  <%= @tool.place %>
+  <br>
+  <%= @tool.user.first_name %>
 </div>

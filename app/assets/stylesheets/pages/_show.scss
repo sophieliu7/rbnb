@@ -1,0 +1,13 @@
+.grid {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 25% 25% 25% 25%;
+}
+.grid-picture {
+  grid-row: 1 /span 4;
+  grid-column: 1;
+}
+.grid-title {
+  grid-row: 1;
+  grid-column: 2;
+}
