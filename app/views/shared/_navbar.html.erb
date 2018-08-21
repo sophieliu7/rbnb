@@ -12,48 +12,63 @@
 
       <!-- Links when logged in -->
 
-      <div class="dropdown-category-menu">
+      <div class="dropdown-nvb-category-menu">
       <%= link_to "Louer du matériel", "/tools" %>
-        <div class="dropdown-content">
-        <ul>
-          <li><%= link_to "Outils", "/tools" %>
-            <ul>
-            <li>Maçonnerie</li>
-            <li>Perceuse</li>
-            <li>Perforateur</li>
-            <li>Scie et tronconneuse</li>
-          </ul>
-          </li>
+        <div class="dropdown-nvb-content">
+        <div class="dropdown-nvb-content-flex">
 
-          <li><%= link_to "Matériel de rénovation", "/tools"%>
+        <div class="flex-item">
             <ul>
-            <li>Décolleuse</li>
-            <li>Pistolet peinture</li>
-            <li>Ponceuse</li>
+              <hr>
+              <li><%= link_to "Outils", "/tools" %>
+                <ul>
+                <li>Maçonnerie</li>
+                <li>Perceuse</li>
+                <li>Perforateur</li>
+                <li>Scie et tronconneuse</li>
+                <li>Visseuse-dévisseuse</li>
+                </ul>
+              </li>
+              <hr>
+              <li><%= link_to "Matériel de rénovation", "/tools"%>
+                <ul>
+                <li>Décolleuse</li>
+                <li>Pistolet peinture</li>
+                <li>Ponceuse</li>
+                <li>décapeuse</li>
+                <li>Taille-haie</li>
+                </ul>
+                </li>
+              </ul>
+        </div>
+
+
+        <div class="flex-item">
+          <ul>
+            <hr>
+            <li><%= link_to "Jardinage", "/tools" %>
+              <ul>
+              <li>Broyeur</li>
+              <li>Débroussailleuse</li>
+              <li>Motoculteur</li>
+              <li>Scarificateur</li>
+              <li>Tondeuse</li>
             </ul>
             </li>
-
-          <li><%= link_to "Jardinage", "/tools" %>
-            <ul>
-            <li>Broyeur</li>
-            <li>Débroussailleuse</li>
-            <li>Motoculteur</li>
-            <li>Scarificateur</li>
-            </ul>
-
-
-          </li>
-          <li><%= link_to "Matériel entretien", "/tools" %>
-            <ul>
-            <li>Aspirateur</li>
-            <li>Matériel haute pression</li>
-            <li>Shampouineuse</li>
-            </ul>
-          </li>
-
-        </ul>
+            <hr>
+            <li><%= link_to "Matériel entretien", "/tools" %>
+              <ul>
+              <li>Aspirateur</li>
+              <li>Matériel haute pression</li>
+              <li>Shampouineuse</li>
+              </ul>
+            </li>
+          </ul>
         </div>
+
       </div>
+    </div>
+  </div>
 
       <%= link_to "Devenez loueur", "#", class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Comment ça marche", "#", class: "navbar-wagon-item navbar-wagon-link" %>
@@ -66,7 +81,7 @@
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
-          <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", data: { toggle: "dropdown" } %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
               <%= link_to "#" do %>
