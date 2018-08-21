@@ -1,7 +1,4 @@
 class ReservationsController < ApplicationController
-  skip_after_action :verify_authorized, except: :index
-  skip_after_action :verify_policy_scoped, only: :index
-
 
   def index
     @reservations = policy_scope(Reservation)
