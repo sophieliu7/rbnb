@@ -15,20 +15,20 @@
       </div>
       <div class="col-md-6">
         <div class="row tool-content">
-            <div class="tool-title">
-              <img class="tool-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
-              <h1><%= @tool.name.capitalize %></h1>
-            </div>
-            <div class="tool-info">
-              <h4><%= @tool.place %></h4>
-              <h5><%= @tool.price_per_day %>€ per day</h5>
-            </div>
-            <div class="tool-description">
-              <p><%= @tool.description %></p>
-            </div>
-            <div class="tool-form">
-                <%= render "reservations/form_new", reservation: @reservation %>
-            </div>
+          <div class="tool-title">
+            <img class="tool-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+            <h1><%= @tool.name.upcase %></h1>
+          </div>
+          <div class="tool-info">
+            <h4><%= @tool.place %></h4>
+            <h5><%= @tool.price_per_day %>€ per day</h5>
+          </div>
+          <div class="tool-description">
+            <p><%= @tool.description %></p>
+          </div>
+          <div class="tool-form">
+              <%= render "reservations/form_new", reservation: @reservation %>
+          </div>
         </div>
       </div>
     </div>

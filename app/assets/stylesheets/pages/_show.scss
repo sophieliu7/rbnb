@@ -21,6 +21,10 @@
 }
 .tool-title {
   position: relative;
+  padding-bottom: 10px;
+  h1 {
+    font-weight: lighter;
+  }
 }
 .tool-user {
   position: absolute;
@@ -32,6 +36,7 @@
 .tool-info {
   display: flex;
   justify-content: space-between;
+  padding-bottom: 10px;
 }
 .tool-form {
   padding: 15px;
