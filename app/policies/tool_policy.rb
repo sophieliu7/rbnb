@@ -9,7 +9,7 @@ class ToolPolicy < ApplicationPolicy
   end
 
   def create?
-    return true
+    return new?
   end
 
   def update?
