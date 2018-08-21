@@ -1,16 +1,32 @@
 <div class="container">
 
 
-<h1>Reservations#index</h1>
-<p>Find me in app/views/reservations/index.html.erb</p>
 
+  <h1>
+    <% if @tool.reservations.length > 0 %>
+    <%= @tool.reservations.length %> réservations pour <%= @tool.name %>
+    <% else %>
+    Aucune réservation
+    <% end %>
+  </h1>
 
-<% @tool.reservations.each do |reservation| %>
-<%= reservation.start_date %>
+  <% @tool.reservations.each_with_index do |reservation, index| %>
+  <div class="message">
+    <div class="message-circle">
+      <strong>  <%= index +1 %></strong>
+    </div>
+    <div class="message-body">
+      <p><strong>Réservation à partir du  : <%= reservation.start_date %></strong>
+        <p><strong>Durée de la réservation  : <%= reservation.duration %> jours</strong></p>
+        <p>
+         Nom du client: <%= reservation.user.email %>
+       </p>
+     </div>
+     <div class="message-status">
+      <p class="status pending">Montant</p>
+      <p class="price">  <%= reservation.total_price %> € </p>
+    </div>
+  </div>
 
-<%= reservation.duration %>
-<br>
-<% end %>
-
-
+  <% end %>
 </div>
