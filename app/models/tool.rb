@@ -1,4 +1,6 @@
 class Tool < ApplicationRecord
+  mount_uploader :photo, PhotoUploader
+
   belongs_to :user
   has_many :reservations
   validates :name, presence: true
