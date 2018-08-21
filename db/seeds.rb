@@ -10,8 +10,12 @@ puts "initialize"
 tool = ['scie', 'marteau', 'pioche', 'tondeuse', 'pinceaux', 'echelle']
 
 puts "create users"
+users = []
 10.times do
-  User.new(email: Faker::Internet.email , password: Faker::Color.hex_color).save!
+  user = User.new(email: Faker::Internet.email , password: Faker::Color.hex_color)
+  user.save!
+  users << user
+
 end
 
 puts "create tools"
@@ -19,8 +23,10 @@ puts "create tools"
   Tool.new(name: tool[rand(0..5)],
     price_per_day: rand(00..100),
     place: Faker::Hobbit.location,
-    description: Faker::PrincessBride.quote  ,
-    user: User.last).save!
+    description: Faker::PrincessBride.quote,
+    user: users[rand(0...10)],
+    photo: 'https://picsum.photos/200/300/?random',
+    ).save!
 end
 
 
