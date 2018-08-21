@@ -1,18 +1,8 @@
 <div class="container">
+  <h1><%= @tool.name %></h1>
+  <p> par <%=@tool.user.email %></p>
+  <br>
+  <p>Please update your tool caracteristics</p>
 
-
-<h1>Tools#edit</h1>
-<p>Find me in app/views/tools/edit.html.erb</p>
-
-
-<%= simple_form_for @tool do |f| %>
-  <%= f.input :name %>
-  <%= f.input :price_per_day %>
-  <%= f.input :description %>
-  <%= f.input :place %>
-  <%= f.input :category %>
-  <%= f.input :sub_category %>
-  <%= f.input :photo %>
-  <%= f.submit "Update tool", class: "btn btn-primary" %>
-<% end %>
+  <%= render 'form', tool: @tool %>
 </div>
