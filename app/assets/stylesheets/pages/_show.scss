@@ -39,7 +39,7 @@
   justify-content: space-between;
   padding-bottom: 10px;
   strong {
-    color: #71D16D;
+    color: $green;
     font-weight: bold;
   }
 }
@@ -51,8 +51,8 @@
   border: 1px solid #D3D4D6;
 }
 .tool-btn {
-  background-color: #71D16D;
-  border: 1px solid #71D16D;
+  background-color: $green;
+  border: 1px solid $green;
   width: 100%;
 }
 .tool-btn:hover {
@@ -61,3 +61,4 @@
   // color: #eef2f3;
   border-color: #66BC62;
 }
+

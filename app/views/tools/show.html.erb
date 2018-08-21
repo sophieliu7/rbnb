@@ -1,7 +1,9 @@
 <div class="container">
 
 
-  <div class="tool-navbar"></div>
+  <div class="tool-navbar">
+    <p><%= link_to "ACCUEIL", root_path %> / <%= link_to "VOIR TOUT", tools_path %> / <%= @tool.name.upcase %></p>
+  </div>
 
   <div class="tool-container">
     <div class="row">
