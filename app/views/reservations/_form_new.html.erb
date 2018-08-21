@@ -1,0 +1,14 @@
+
+<div class="container card-reservation">
+
+<h1>Réserver cet outil</h1>
+
+  <div class="box2">
+      <%= simple_form_for [@tool, @reservation] do |f| %>
+  <!--     < input :start_date data-provide='datepicker'  %> -->
+      <%= f.input :start_date, as: :string, input_html: {class: "datepicker"} %>
+      <%= f.input :duration %>
+      <%= f.submit "add a reservation", class: "btn btn-primary" %>
+      <% end %>
+  </div>
+</div>
