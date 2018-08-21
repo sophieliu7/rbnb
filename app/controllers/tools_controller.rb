@@ -4,20 +4,23 @@ class ToolsController < ApplicationController
 
 
   def index
-    @tools = Tool.all
+    @tools = policy_scope(Tool)
   end
 
   def show
     @tool = Tool.find(params[:id])
+    authorize @tool
   end
 
   def new
     @tool = Tool.new
+    authorize @tool
   end
 
   def create
     @tool = Tool.new(tool_params)
     @tool.user = current_user
+    authorize @tool
     if @tool.save!
       redirect_to tools_path
     else
@@ -27,10 +30,12 @@ class ToolsController < ApplicationController
 
   def edit
     @tool = Tool.find(params[:id])
+    authorize @tool
   end
 
   def update
     @tool = Tool.find(params[:id])
+    authorize @tool
     if @tool.update!(tool_params)
       redirect_to tools_path
     else
@@ -39,6 +44,7 @@ class ToolsController < ApplicationController
   end
 
   def destroy
+    authorize @tool
   end
 
   private
