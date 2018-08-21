@@ -13,7 +13,7 @@ class ReservationsController < ApplicationController
     @tool = Tool.find(params[:tool_id])
     @reservation.user = current_user
     @reservation.tool = @tool
-    if @reservation.save
+    if @reservation.save!
       redirect_to tool_path(@tool)
     else
       render :new

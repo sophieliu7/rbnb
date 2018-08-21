@@ -1,5 +1,7 @@
-<h1>Reservations#new</h1>
-<p>Find me in app/views/reservations/new.html.erb</p>
+<div class="container">
+
+
+<h1>Faites une réservation</h1>
 
 
 <%= simple_form_for [@tool, @reservation] do |f| %>
@@ -7,3 +9,4 @@
   <%= f.input :start_date %>
   <%= f.submit "add a reservation", class: "btn btn-primary" %>
 <% end %>
+</div>
