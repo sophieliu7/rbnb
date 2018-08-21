@@ -77,9 +77,18 @@
 }
 
 #logo{
-
-font-size:30px;
+color: black;
+margin-top: 15px;
+font-size:40px;
 font-family: arial;
+}
+
+#logo:hover {
+color: black;
+margin-top: 15px;
+font-size: 50px;
+font-family: arial;
+transition: 0.3s;
 }
 
 
