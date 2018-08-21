@@ -1,18 +1,8 @@
 
 <div class="container">
 
-<h1>Tools#new</h1>
-<p>Find me in app/views/tools/new.html.erb</p>
+<h1>Welcome, new TinkerBuddy!</h1>
+<p>Let's put your wonderful tool online for rent</p>
 
-
-<%= simple_form_for @tool do |f| %>
-  <%= f.input :name %>
-  <%= f.input :price_per_day %>
-  <%= f.input :description %>
-  <%= f.input :place %>
-  <%= f.input :category %>
-  <%= f.input :sub_category %>
-  <%= f.input :photo %>
-  <%= f.submit "add a tool", class: "btn btn-primary" %>
-<% end %>
+  <%= render 'form', tool: @tool %>
 </div>

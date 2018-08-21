@@ -1,0 +1,20 @@
+
+
+    <div class="row">
+      <%= simple_form_for @tool do |f| %>
+        <div class="col-md-6">
+          <%= f.input :name %>
+          <%= f.input :price_per_day %>
+          <%= f.input :place %>
+          <%= f.input :photo %>
+        </div>
+        <div class="col-md-6">
+          <div class="edit-description" id="message">
+            <%= f.input :category %>
+            <%= f.input :sub_category %>
+            <%= f.input :description %>
+          </div>
+          <%= f.submit "Update tool", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
