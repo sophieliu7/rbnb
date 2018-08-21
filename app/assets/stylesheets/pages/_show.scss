@@ -35,10 +35,29 @@
 }
 .tool-info {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   padding-bottom: 10px;
+  strong {
+    color: #71D16D;
+    font-weight: bold;
+  }
+}
+.tool-description {
+  margin-bottom: 30px;
 }
 .tool-form {
   padding: 15px;
   border: 1px solid #D3D4D6;
+}
+.tool-btn {
+  background-color: #71D16D;
+  border: 1px solid #71D16D;
+  width: 100%;
+}
+.tool-btn:hover {
+  opacity: 0.9;
+  background-color: #66BC62;
+  // color: #eef2f3;
+  border-color: #66BC62;
 }
