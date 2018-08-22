@@ -22,6 +22,11 @@
         autofocus: true ,
         input_html: { autocomplete: "name" }%>
 
+        <%= f.input :address,
+        required: true,
+        autofocus: true ,
+        input_html: { autocomplete: "address" }%>
+
         <%= f.input :password,
         required: true,
         hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
