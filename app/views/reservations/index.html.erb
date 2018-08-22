@@ -23,10 +23,11 @@
        </p>
      </div>
      <div class="message-status">
-      <p class="status pending">Montant</p>
+      <p class="status pending">Montant <i class="fas fa-money-bill-wave"></i></p>
       <p class="price">  <%= reservation.total_price %> € </p>
     </div>
   </div>
 
   <% end %>
+   <%= link_to "back to tool", tool_path(@tool) %>
 </div>

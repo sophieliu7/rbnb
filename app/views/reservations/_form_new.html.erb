@@ -1,14 +1,14 @@
 
-<div class="container card-reservation">
+<!-- <div class="container card-reservation"> -->
 
-<h1>Réserver cet outil</h1>
+<!-- <h1>Réserver cet outil</h1> -->
 
-  <div class="box2">
+  <div class="tool-form-content">
       <%= simple_form_for [@tool, @reservation] do |f| %>
   <!--     < input :start_date data-provide='datepicker'  %> -->
-      <%= f.input :start_date, as: :string, input_html: {class: "datepicker"} %>
+      <%= f.input :start_date, as: :string, input_html: {class: "datepicker"}%>
       <%= f.input :duration %>
-      <%= f.submit "add a reservation", class: "btn btn-primary" %>
+      <%= f.submit "add a reservation", class: "btn btn-primary tool-btn" %>
       <% end %>
   </div>
-</div>
+<!-- </div> -->
