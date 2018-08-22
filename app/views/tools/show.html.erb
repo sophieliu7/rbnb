@@ -2,7 +2,7 @@
 
 
   <div class="tool-navbar">
-    <p><%= link_to "ACCUEIL", root_path %> / <%= link_to "VOIR TOUT", tools_path %> / <%= @tool.name.upcase %></p>
+    <p><%= link_to "HAMMER PLACE", root_path %> / <%= link_to "ALL TOOLS", tools_path %> / <%= @tool.name.upcase %></p>
   </div>
 
   <div class="tool-container">
@@ -30,6 +30,12 @@
           </div>
           <div class="tool-form">
               <%= render "reservations/form_new", reservation: @reservation %>
+          </div>
+          <div class="tool-links text-center">
+            <% if policy(@tool).edit? %>
+              <br>
+              <p><%= link_to "MODIFY YOUR TOOL", edit_tool_path(@tool) %> / <%= link_to "DELETE YOUR TOOL", tool_path(@tool), method: :delete, data: { confirm: 'Are you sure?' } %> </p>
+            <% end %>
           </div>
         </div>
       </div>

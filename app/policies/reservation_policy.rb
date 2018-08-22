@@ -9,7 +9,7 @@ class ReservationPolicy < ApplicationPolicy
   end
 
   def destroy?
-    record.user == user
+    recor.user == user
   end
 
   class Scope < Scope

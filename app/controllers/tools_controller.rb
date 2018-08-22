@@ -56,7 +56,10 @@ class ToolsController < ApplicationController
   end
 
   def destroy
+    @tool = Tool.find(params[:id])
     authorize @tool
+    @tool.destroy
+    redirect_to tools_path
   end
 
   private
