@@ -26,7 +26,7 @@
             <h2> <%= tool.name %> </h2>
             <p> <%= tool.description.first(110) %> </p>
           </div>
-          <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+          <i class="far fa-user-circle card-user"></i>
           <%= link_to " ", tool_path(tool.id), class:"card-link" %>
           <div class="card-username">
           <p><%= tool.user.name %></p>
