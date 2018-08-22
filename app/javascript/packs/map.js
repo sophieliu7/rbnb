@@ -16,3 +16,9 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
 }
 
 
+// app/javascript/packs/map.js
+// [...]
+import { autocomplete } from '../components/autocomplete';
+
+// [...]
+autocomplete();
