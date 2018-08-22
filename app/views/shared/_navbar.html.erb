@@ -7,72 +7,72 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-    <% if user_signed_in? %>
 
-
-      <!-- Links when logged in -->
-
-      <div class="dropdown-nvb-category-menu">
+    <div class="dropdown-nvb-category-menu">
       <%= link_to "Louer du matériel", "/tools" %>
-        <div class="dropdown-nvb-content">
+      <div class="dropdown-nvb-content">
         <div class="dropdown-nvb-content-flex">
 
-        <div class="flex-item">
+          <div class="flex-item">
             <ul>
               <hr>
               <li><%= link_to "Outils", "/tools" %>
                 <ul>
-                <li>Maçonnerie</li>
-                <li>Perceuse</li>
-                <li>Perforateur</li>
-                <li>Scie et tronconneuse</li>
-                <li>Visseuse-dévisseuse</li>
+                  <li>Maçonnerie</li>
+                  <li>Perceuse</li>
+                  <li>Perforateur</li>
+                  <li>Scie et tronconneuse</li>
+                  <li>Visseuse-dévisseuse</li>
                 </ul>
               </li>
               <hr>
               <li><%= link_to "Matériel de rénovation", "/tools"%>
                 <ul>
-                <li>Décolleuse</li>
-                <li>Pistolet peinture</li>
-                <li>Ponceuse</li>
-                <li>décapeuse</li>
-                <li>Taille-haie</li>
+                  <li>Décolleuse</li>
+                  <li>Pistolet peinture</li>
+                  <li>Ponceuse</li>
+                  <li>décapeuse</li>
+                  <li>Taille-haie</li>
                 </ul>
-                </li>
-              </ul>
-        </div>
-
-
-        <div class="flex-item">
-          <ul>
-            <hr>
-            <li><%= link_to "Jardinage", "/tools" %>
-              <ul>
-              <li>Broyeur</li>
-              <li>Débroussailleuse</li>
-              <li>Motoculteur</li>
-              <li>Scarificateur</li>
-              <li>Tondeuse</li>
+              </li>
             </ul>
-            </li>
-            <hr>
-            <li><%= link_to "Matériel entretien", "/tools" %>
-              <ul>
-              <li>Aspirateur</li>
-              <li>Matériel haute pression</li>
-              <li>Shampouineuse</li>
-              </ul>
-            </li>
-          </ul>
-        </div>
+          </div>
 
+
+          <div class="flex-item">
+            <ul>
+              <hr>
+              <li><%= link_to "Jardinage", "/tools" %>
+                <ul>
+                  <li>Broyeur</li>
+                  <li>Débroussailleuse</li>
+                  <li>Motoculteur</li>
+                  <li>Scarificateur</li>
+                  <li>Tondeuse</li>
+                </ul>
+              </li>
+              <hr>
+              <li><%= link_to "Matériel entretien", "/tools" %>
+                <ul>
+                  <li>Aspirateur</li>
+                  <li>Matériel haute pression</li>
+                  <li>Shampouineuse</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
 
-      <%= link_to "Devenez loueur", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Comment ça marche", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "Devenez loueur", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+
+    <% if user_signed_in? %>
+
+
+      <!-- Links when logged in -->
       <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Ajouter un outil", class: "navbar-wagon-item navbar-wagon-link" %>
 
 
 
@@ -103,6 +103,7 @@
       </div>
     <% else %>
       <!-- Login link (when logged out) -->
+      <%= link_to "Comment ça marche", "#", class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
   </div>
