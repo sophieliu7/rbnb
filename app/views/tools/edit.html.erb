@@ -1,4 +1,9 @@
 <div class="container">
+
+  <div class="tool-navbar">
+    <p><%= link_to "HAMMER PLACE", root_path %> / <%= link_to "ALL TOOLS", tools_path %> / <%= link_to @tool.name.upcase, tool_path(@tool) %></p>
+  </div>
+
   <h1><%= @tool.name %></h1>
   <p> par <%=@tool.user.email %></p>
   <br>
