@@ -9,10 +9,19 @@ class ToolsController < ApplicationController
 
   def show
     @tool = Tool.find(params[:id])
+    @user = @tool.user
+
+    if @user.latitude.nil? || @user.longitude.nil?
+      @markers = []
+    else
+    @markers = [{lat: @user.latitude, lng: @user.longitude}]
+    end
+
     @reservation = Reservation.new
     # @tool = Tool.find(params[:tool_id])
     # authorize @reservation
     authorize @tool
+
   end
 
   def new
