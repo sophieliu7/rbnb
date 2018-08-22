@@ -3,8 +3,10 @@
 
 
   <h1>
-    <% if @tool.reservations.length > 0 %>
+    <% if @tool.reservations.length > 1 %>
     <%= @tool.reservations.length %> réservations pour <%= @tool.name %>
+    <% elsif  @tool.reservations.length == 1 %>
+    <%=   @tool.reservations.length %> réservation pour <%= @tool.name %>
     <% else %>
     Aucune réservation
     <% end %>
