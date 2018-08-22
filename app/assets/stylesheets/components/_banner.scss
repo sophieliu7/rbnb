@@ -3,6 +3,7 @@
   text-align: center;
   height: 80vh;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-attachment: fixed;
   background-size: cover !important;
   display: flex;
   align-items: center;
