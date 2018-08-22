@@ -18,8 +18,12 @@
       <div class="col-md-6">
         <div class="row tool-content">
           <div class="tool-title">
-            <img class="tool-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
-            <h1><%= @tool.name.upcase %></h1>
+
+            <h2><%= @tool.name.upcase %></h2>
+          </div>
+          <div class="tool-user">
+            <img class="tool-user-pic" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+            <h3><%= @tool.user.name %></h3>
           </div>
           <div class="tool-info">
             <h4><%= @tool.place %></h4>
