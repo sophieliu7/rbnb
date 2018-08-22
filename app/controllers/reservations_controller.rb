@@ -16,12 +16,13 @@ class ReservationsController < ApplicationController
     @tool = Tool.find(params[:tool_id])
     @reservation.user = current_user
     @reservation.tool = @tool
-    @reservation.total_price = @tool.price_per_day * @reservation.duration
+    @reservation.total_price = @tool.price_per_day * @reservation.duration if @reservation.duration.class == Integer
     authorize @reservation
     if @reservation.save
       redirect_to tool_reservations_path(@tool)
     else
-      render :new
+      @reservation.duration = nil
+      render "tools/show", reservation: @reservation
     end
   end
 
