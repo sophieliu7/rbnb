@@ -20,16 +20,25 @@
   justify-content: space-around;
 }
 .tool-title {
-  position: relative;
+  // position: relative;
   padding-bottom: 10px;
   h1 {
     font-weight: lighter;
   }
 }
 .tool-user {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  // right: 10px;
+  // top: 5px;
+  // width: 55px;
+  // border-radius: 50%;
+}
+.tool-user-pic {
   position: absolute;
   right: 10px;
-  top: 5px;
+  // top: 5px;
   width: 55px;
   border-radius: 50%;
 }
