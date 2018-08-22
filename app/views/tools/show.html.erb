@@ -9,7 +9,7 @@
     <div class="row show-row">
       <div class="col-md-6">
         <% if @tool.photo.url.nil? %>
-          <% url = cl_image_tag("qkdcyx2j5vajhsqdsd1o.jpg", crop: :fill) %>
+          <% url = "https://res.cloudinary.com/dcmexvwbg/image/upload/v1534942802/np3zybbynuosmuvnj4nt.jpg" %>
         <% else %>
           <% url = cl_image_path(@tool.photo, crop: :fill) %>
         <% end %>
