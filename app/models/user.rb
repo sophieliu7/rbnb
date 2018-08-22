@@ -7,4 +7,7 @@ class User < ApplicationRecord
   # validates :first_name, presence: true
   # validates :last_name, presence: true
   has_many :reservations
+
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 end
