@@ -1,14 +1,16 @@
 .user-infos {
   // margin-top: 20px;
-  align-items: center;
-  justify-content: center;
+  // align-items: center;
+  justify-content: space-around;
+  display: flex;
 }
 .user-main-info {
   margin: 20px 0;
-  display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   // border: 1px solid $green;
+  max-width: 50%;
 }
 .user-pic {
+  margin: 20px 0;
   height: 50vh;
 }
