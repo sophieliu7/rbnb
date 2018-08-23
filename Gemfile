@@ -38,3 +38,4 @@ gem 'pundit'
 gem 'bootstrap-datepicker-rails'
 gem "geocoder"
 
+gem 'pg_search'
