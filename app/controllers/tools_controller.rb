@@ -8,6 +8,7 @@ class ToolsController < ApplicationController
   end
 
   def show
+
     @tool = Tool.find(params[:id])
     @user = @tool.user
 
@@ -22,7 +23,13 @@ class ToolsController < ApplicationController
     # authorize @reservation
     authorize @tool
 
+
+    @reservations = Reservation.where(tool_id: @tool)
+    @reviews = Review.where(reservation_id: @reservations)
+
   end
+
+
 
   def new
     @tool = Tool.new

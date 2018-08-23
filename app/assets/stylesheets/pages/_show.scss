@@ -80,12 +80,48 @@
 display:flex;
 flex-direction:row;
 flex-wrap:wrap;
+margin-top: 30px;
 }
 
-.flexreviewmap .item {
+.flexfirstitem {
+
+padding: 10px 40px;
+border-right: 1px solid #848484;
+border-left: 1px solid #848484;
+max-width: 500px;
+}
+
+.flexseconditem {
 flex-basis: 400px;
-background-color: red;
+max-width: 500px;
+padding: 10px 30px;
+background-color:#FFFFFF;
 }
 
+
+.flexseconditem ul li {
+ list-style: none;
+}
+
+
+.flexseconditem hr{
+
+  height: 1px;
+  margin: 3 0;
+  padding:0;
+  color: #F00;
+  background-color:#8e9eab ;
+  border: 0;
+
+}
+
+hr {
+  height: 2px;
+  margin: 3 0;
+  padding:0;
+  color: #F00;
+  background-color: #F00;
+  border: 0;
+}
 
 

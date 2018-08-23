@@ -8,6 +8,12 @@
 puts "je destroy les datas"
 Tool.destroy_all
 User.destroy_all
+Reservation.destroy_all
+Review.destroy_all
+
+
+
+
 puts "initialize"
 tool = ['scie', 'marteau', 'pioche', 'tondeuse', 'pinceaux', 'echelle']
 address =["46  rue Bonneterie, MONTBÉLIARD", "13 villa gaudelet, paris", "36 rue de la verrerie, Paris", "14 rue raymond losserand, paris", "2 rue de la république, brest"]
@@ -22,8 +28,11 @@ users = []
 
 end
 
+
+
+
 puts "create tools"
-20.times do
+5.times do
   Tool.new(name: tool[rand(0..5)],
     price_per_day: rand(00..100),
     place: Faker::Hobbit.location,
@@ -32,6 +41,22 @@ puts "create tools"
     photo: 'https://picsum.photos/200/300/?random',
     ).save!
 end
+
+puts "create reservation"
+resa = Reservation.new(user: User.first, start_date: '2017/10/20' ,duration: 10, total_price: 1.1164 , tool: Tool.all.sample)
+resa.save!
+
+
+puts "create review"
+review1 = Review.new(reservation: Reservation.first , feedback:"outil en bon etat et vendeur sympa", rating:5)
+review1.save!
+
+review2 = Review.new(reservation: Reservation.first, feedback:"très bonne experience", rating:4)
+review2.save!
+
+
+
+
 
 
 puts "finished"
