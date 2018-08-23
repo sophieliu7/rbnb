@@ -37,19 +37,10 @@ class ToolsController < ApplicationController
     else
       @markers = [{lat: @user.latitude, lng: @user.longitude}]
     end
-<<<<<<< HEAD
 
-    @reservation = Reservation.new
-    # @tool = Tool.find(params[:tool_id])
-    # authorize @reservation
-    authorize @tool
-
-
-    @reservations = Reservation.where(tool_id: @tool)
     @reviews = Review.where(reservation_id: @reservations)
 
-=======
->>>>>>> 5cf9dfd461c7d93f5b5bb0d6a389aa76fd64a6a4
+
   end
 
 
