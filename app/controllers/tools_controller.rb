@@ -63,7 +63,7 @@ class ToolsController < ApplicationController
     @tool = Tool.new(tool_params)
     @tool.user = current_user
     authorize @tool
-    if @tool.save!
+    if @tool.save
       redirect_to tools_path
     else
       render :new
@@ -95,6 +95,6 @@ class ToolsController < ApplicationController
   private
 
     def tool_params
-    params.require(:tool).permit(:name, :price_per_day, :description, :place, :photo)
+    params.require(:tool).permit(:name, :price_per_day, :description, :photo)
   end
 end

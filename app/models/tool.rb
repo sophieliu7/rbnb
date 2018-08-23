@@ -15,7 +15,7 @@ class Tool < ApplicationRecord
   validates :price_per_day, :presence => true
 
   validates :description, presence: true
-  validates :place, presence: true
+  # validates :place, presence: true
   validates :user, presence: true
 
 
