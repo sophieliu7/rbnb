@@ -1,3 +1,4 @@
+
 .message {
   display: flex;
   align-items: center;
@@ -18,7 +19,11 @@
   align-items: center;
 
 }
-
+.message-pic {
+  margin: 5px 10px;
+  width: 115px;
+  height: 130px;
+}
 .message:last-child {
   border-bottom: none;
 }
