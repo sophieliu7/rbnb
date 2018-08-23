@@ -117,11 +117,11 @@
 <!-- Search button  -->
 
       <div class="dropdown">
-        <button class="btn dropdown-toggle btn-default search-button" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        <button class="btn dropdown-toggle search-button" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
           <i class="fas fa-search"></i>
 
         </button >
-        <ul class="dropdown-menu dropdown-menu-right research-field" aria-labelledby="dropdownMenu1">
+        <ul class="dropdown-menu dropdown-menu-right research-field " aria-labelledby="dropdownMenu1">
 
           <%= form_tag tools_path, method: :get do %>
           <%= text_field_tag :query,
