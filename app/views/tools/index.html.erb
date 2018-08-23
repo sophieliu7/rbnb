@@ -1,7 +1,17 @@
 <div class="container">
 
 
-  <h1>Tool availables (<%= @tools.length %>)</h1>
+  <h1>Outils disponibles (<%= @tools.length %>)</h1>
+
+  <%= form_tag tools_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Chercher un outil ou un lieu..."
+  %>
+<% end %>
+
+<br>
 
 
 <div class="row">

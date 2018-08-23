@@ -17,4 +17,16 @@ class Tool < ApplicationRecord
   validates :description, presence: true
   validates :place, presence: true
   validates :user, presence: true
+
+
+  include PgSearch
+
+  pg_search_scope :global_search,
+      against: [ :name, :description ],
+      associated_against: {
+        user: [ :name, :first_name, :last_name, :address ]
+      },
+      using: {
+        tsearch: { prefix: true }
+      }
 end

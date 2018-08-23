@@ -4,7 +4,11 @@ class ToolsController < ApplicationController
 
 
   def index
-    @tools = policy_scope(Tool)
+    if params[:query].present?
+      @tools = policy_scope(Tool).global_search(params[:query])
+    else
+      @tools = policy_scope(Tool)
+    end
   end
 
   def show
