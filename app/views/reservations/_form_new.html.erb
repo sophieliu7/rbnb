@@ -8,6 +8,11 @@
   <!--     < input :start_date data-provide='datepicker'  %> -->
       <%= f.input :start_date, as: :string, input_html: {class: "datepicker"}%>
       <%= f.input :duration %>
+      <ul class="confirmation">
+        <li>Start date: </li>
+        <li>End date: </li>
+        <li>TOTAL PRICE : </li>
+      </ul>
       <%= f.submit "Create reservation", class: "btn btn-primary tool-btn" %>
       <% end %>
   </div>
