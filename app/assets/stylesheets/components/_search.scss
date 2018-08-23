@@ -1,0 +1,21 @@
+.search-button {
+  border-color: white;
+}
+
+.search-button:hover {
+  background-color: white;
+  border-color: white;
+}
+
+.research-field {
+    width: 500px;
+}
+
+.search-form-control {
+  border-style: none;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: none;
+  width: auto;
+  transition: 0.5s;
+}
