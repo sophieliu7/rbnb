@@ -1,1 +1,11 @@
-<p>my reservations</p>
+<%= current_user.reservations %>
+
+  <h1>
+    <% if @tool.reservations.length > 1 %>
+    <%= @tool.reservations.length %> réservations
+    <% elsif  @tool.reservations.length == 1 %>
+    <%=   @tool.reservations.length %> réservation pour <%= @tool.name %>
+    <% else %>
+    Aucune réservation
+    <% end %>
+  </h1>
