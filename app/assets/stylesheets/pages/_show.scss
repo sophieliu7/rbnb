@@ -75,3 +75,17 @@
 .tool-navbar {
   padding-top: 20px;
 }
+
+.flexreviewmap {
+display:flex;
+flex-direction:row;
+flex-wrap:wrap;
+}
+
+.flexreviewmap .item {
+flex-basis: 400px;
+background-color: red;
+}
+
+
+
