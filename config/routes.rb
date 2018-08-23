@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   resources :tools do
     resources :reservations
   end
-  resources :users, only: [:show]
+
+  get "dashboard", to: 'pages#dashboard'
   devise_for :users
 
   root to: 'pages#home'
