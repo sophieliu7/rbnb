@@ -4,19 +4,40 @@ class ToolsController < ApplicationController
 
 
   def index
-    @tools = policy_scope(Tool)
+    if params[:query].present?
+      @tools = policy_scope(Tool).global_search(params[:query])
+    else
+      @tools = policy_scope(Tool)
+    end
   end
 
   def show
 
     @tool = Tool.find(params[:id])
     @user = @tool.user
+    authorize @tool
+    @reservation = Reservation.new
+    # @tool = Tool.find(params[:tool_id])
+    # authorize @reservation
 
+    # Creation disabled dates
+    @reservations = Reservation.where(tool_id: @tool.id)
+    @reservations_dates = []
+    @reservations.each do |reservation|
+      reservation_end_date = reservation.start_date + reservation.duration
+      @reservations_dates << {
+        from: reservation.start_date,
+        to: reservation_end_date
+        }
+    end
+
+    # Creation Map
     if @user.latitude.nil? || @user.longitude.nil?
       @markers = []
     else
-    @markers = [{lat: @user.latitude, lng: @user.longitude}]
+      @markers = [{lat: @user.latitude, lng: @user.longitude}]
     end
+<<<<<<< HEAD
 
     @reservation = Reservation.new
     # @tool = Tool.find(params[:tool_id])
@@ -27,6 +48,8 @@ class ToolsController < ApplicationController
     @reservations = Reservation.where(tool_id: @tool)
     @reviews = Review.where(reservation_id: @reservations)
 
+=======
+>>>>>>> 5cf9dfd461c7d93f5b5bb0d6a389aa76fd64a6a4
   end
 
 

@@ -1,7 +1,7 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <p id="logo"> <i class="fas fa-gavel"></i></p>
+  <p id="logo"> <i class="fas fa-gavel"></i></p>
   <% end %>
 
   <!-- Right Navigation -->
@@ -70,56 +70,85 @@
     <% if user_signed_in? %>
 
 
-      <!-- Links when logged in -->
-      <%= link_to "Ajouter un tool", new_tool_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+    <!-- Links when logged in -->
+    <%= link_to "Ajouter un tool", new_tool_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
 
 
 
 
-
-      <!-- Avatar with dropdown menu -->
-      <div class="navbar-wagon-item">
-        <div class="dropdown">
-          <i class="fas fa-user-circle" id="navbar-wagon-menu" data-toggle="dropdown"></i>
-          <!-- <p><%# image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", data: { toggle: "dropdown" } %> </p -->
+    <!-- Avatar with dropdown menu -->
+    <div class="navbar-wagon-item">
+      <div class="dropdown">
+        <i class="fas fa-user-circle" id="navbar-wagon-menu" data-toggle="dropdown"></i>
+        <!-- <p><%# image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", data: { toggle: "dropdown" } %> </p -->
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
               <%= link_to "#" do %>
-                <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+              <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
               <% end %>
             </li>
             <li>
               <%= link_to "#" do %>
-                <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
+              <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
               <% end %>
             </li>
             <li>
               <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+              <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
               <% end %>
             </li>
           </ul>
         </div>
       </div>
-    <% else %>
+
+
+
+
+      <% else %>
       <!-- Login link (when logged out) -->
       <%= link_to "Devenez loueur", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Comment ça marche", "#", class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
-    <% end %>
-  </div>
+      <% end %>
 
-  <!-- Dropdown list appearing on mobile only -->
-  <div class="navbar-wagon-item hidden-md hidden-lg">
-    <div class="dropdown">
-      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Some mobile link</a></li>
-        <li><a href="#">Other one</a></li>
-        <li><a href="#">Other one</a></li>
-      </ul>
+
+
+<!-- Search button  -->
+
+      <div class="dropdown">
+        <button class="btn dropdown-toggle search-button" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          <i class="fas fa-search"></i>
+
+        </button >
+        <ul class="dropdown-menu dropdown-menu-right research-field " aria-labelledby="dropdownMenu1">
+
+          <%= form_tag tools_path, method: :get do %>
+          <%= text_field_tag :query,
+          params[:query],
+          class: "form-control search-form-control",
+            placeholder: "Chercher un outil ou un lieu..."
+            %>
+          <% end %>
+
+          </ul>
+      </div>
+
+<!-- end of search button -->
+
+
+      </div>
+
+      <!-- Dropdown list appearing on mobile only -->
+      <div class="navbar-wagon-item hidden-md hidden-lg">
+        <div class="dropdown">
+          <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+            <li><a href="#">Some mobile link</a></li>
+            <li><a href="#">Other one</a></li>
+            <li><a href="#">Other one</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 

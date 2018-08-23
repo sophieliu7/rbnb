@@ -30,7 +30,7 @@
             <h4><strong><%= @tool.price_per_day %>€ per day</strong></h4>
           </div>
           <div class="tool-description">
-            <p><%= @tool.description %></p>
+            <p><%= @tool.description.first(100) %></p>
           </div>
           <div class="tool-form">
               <%= render "reservations/form_new", reservation: @reservation %>

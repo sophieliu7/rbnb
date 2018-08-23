@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 puts "je destroy les datas"
+Reservation.destroy_all
 Tool.destroy_all
 User.destroy_all
 Reservation.destroy_all

@@ -1,0 +1,29 @@
+.search-button {
+  border-color: white;
+  background-color: white;
+}
+
+.search-button:hover {
+  // background-color: white;
+  border-color: white;
+  font-size:25px;
+  transition: 0.3s;
+}
+
+.research-field {
+    width: 500px;
+}
+
+.search-form-control {
+  border-style: none;
+  padding: 20px;
+  margin: 10px;
+  box-shadow: none;
+  width: 95%;
+  transition: 0.5s;
+}
+
+// .search-on-click-button:hover {
+//   background-color: white;
+//   border: none;
+// }
