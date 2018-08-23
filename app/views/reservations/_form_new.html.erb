@@ -2,7 +2,7 @@
   <div
     class="tool-form-content"
     id="form-flatpickr"
-    data-reservations="<% @reservations_dates.to_json %>"
+    data-reservations="<%= @reservations_dates.to_json %>"
     >
       <%= simple_form_for [@tool, @reservation] do |f| %>
   <!--     < input :start_date data-provide='datepicker'  %> -->
