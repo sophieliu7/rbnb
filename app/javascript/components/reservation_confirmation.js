@@ -1,15 +1,15 @@
 function ConfirmInfo() {
   const start_date = document.getDocumentById("reservation_start_date");
   const duration = document.getDocumentById("reservation_duration");
+  const confirmation = document.getDocumentById("confirmation");
 
   console.log(start_date);
 
-  let price = 0;
-  let totalPrice = 0;
+
 
   start_date.addEventListener("blur", (event) => {
     console.log(start_date)
-    price.insertAdjacentHTML("", `${totalPrice}€`);
+    confirmation.insertAdjacentHTML("afterbegin", "HELLLO" );
 
   // dates.forEach((date) => {
   //   date.addEventListener("blur", (event) => {
