@@ -46,9 +46,8 @@ class ToolsController < ApplicationController
   def create
     @tool = Tool.new(tool_params)
     @tool.user = current_user
-    raise
     authorize @tool
-    if @tool.save!
+    if @tool.save
       redirect_to tools_path
     else
       render :new
