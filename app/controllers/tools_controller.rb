@@ -2,22 +2,42 @@ class ToolsController < ApplicationController
 
   skip_before_action :authenticate_user!, only: [:index, :show]
 
-
+#################################################################
   def index
     if params[:query].present?
       @tools = policy_scope(Tool).global_search(params[:query])
+      @markers = []
+      @tools.each do |tool|
+        unless tool.user.latitude.nil? || tool.user.longitude.nil?
+        @markers << {lat: tool.user.latitude, lng: tool.user.longitude}
+      end
+    end
     else
       @tools = policy_scope(Tool)
+      @markers = []
+      @tools.each do |tool|
+        unless tool.user.latitude.nil? || tool.user.longitude.nil?
+        @markers << {lat: tool.user.latitude, lng: tool.user.longitude}
+      end
     end
+    end
+
+  # Creation de la Map avec les markers sur INDEX
+    # @markers = []
+    # @tools.each do |tool|
+    #   unless tool.user.latitude.nil? || tool.user.longitude.nil?
+    #   @markers << {lat: tool.user.latitude, lng: tool.user.longitude}
+    #   end
+    # end
+
   end
 
+#####################################################################
   def show
     @tool = Tool.find(params[:id])
     @user = @tool.user
     authorize @tool
     @reservation = Reservation.new
-    # @tool = Tool.find(params[:tool_id])
-    # authorize @reservation
 
     # Creation disabled dates
     @reservations = Reservation.where(tool_id: @tool.id)
@@ -39,10 +59,15 @@ class ToolsController < ApplicationController
     @reviews = Review.where(reservation_id: @reservations)
   end
 
+
+#####################################################################
+
   def new
     @tool = Tool.new
     authorize @tool
   end
+
+#####################################################################
 
   def create
     @tool = Tool.new(tool_params)
@@ -55,10 +80,14 @@ class ToolsController < ApplicationController
     end
   end
 
+  #####################################################################
+
   def edit
     @tool = Tool.find(params[:id])
     authorize @tool
   end
+
+#####################################################################
 
   def update
     @tool = Tool.find(params[:id])
@@ -69,6 +98,8 @@ class ToolsController < ApplicationController
       render :update
     end
   end
+
+#####################################################################
 
   def destroy
     @tool = Tool.find(params[:id])

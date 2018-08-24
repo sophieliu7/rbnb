@@ -1,0 +1,16 @@
+.container-map-tools {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+#map {
+  flex: 0 0 35%;
+  height: 100vh;
+  position: sticky !important;
+  top: 0 !important;
+  margin-left: 15px;
+}
+
+.cards-container {
+    width: 65%;
+}
