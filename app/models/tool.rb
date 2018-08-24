@@ -18,6 +18,13 @@ class Tool < ApplicationRecord
   # validates :place, presence: true
   validates :user, presence: true
 
+  # validates :category, inclusion: { in: %w(
+  #   'Outils',
+  #   'Jardinage',
+  #   'Matériel de Rénovation',
+  #   'Matériel Entretien'
+  # )}
+
 
   include PgSearch
 
