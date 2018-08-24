@@ -1,0 +1,18 @@
+
+
+addReview = (newReview) => {
+
+  const reviews = document.getElementById('reviews');
+  reviews.insertAdjacentHTML('beforeend', "MON HMTL ICI");
+  newReviewForm.innerHTML = innerHTML;
+}
+
+
+<% if @review.errors.any? %>
+  refreshForm('<%= j render "shared/_addreview", reservation: @reservation, review: @review %>');
+<% else %>
+  addReview('<%= j render "shared/reviews", review: @review %>');
+  refreshForm('<%= j render "shared/review", reservation: @reservation, review: Review.new %>');
+<% end %>
+
+

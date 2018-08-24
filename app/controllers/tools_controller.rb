@@ -55,8 +55,18 @@ class ToolsController < ApplicationController
     else
       @markers = [{lat: @user.latitude, lng: @user.longitude, icon: image}]
     end
-    @reviews = Review.where(reservation_id: @reservations)
-  end
+
+    @review = Review.new
+    @reviews = []
+    @reservations.each do |reservation|
+      reservation.reviews.each do |review|
+        @reviews << review
+      end
+    end
+
+    @reservation_user = Reservation.where(tool_id: @tool, user_id: current_user).last
+    end
+
 
 
 #####################################################################

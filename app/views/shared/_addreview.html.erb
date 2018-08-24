@@ -1,0 +1,7 @@
+<h2>Ajoutez un commentaire</h2>
+<%= simple_form_for [tool, review] do |f| %>
+  <%= f.input :feedback %>
+  <%= f.input :rating %>
+  <%= f.input :reservation, input_html: { :value => @reservation_user.id} , as: :hidden  %>
+  <%= f.submit "add a review", class: "btn btn-primary" %>
+<% end %>
