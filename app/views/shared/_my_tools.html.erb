@@ -11,19 +11,31 @@
           <% aphoto = tool.photo %>
         <% end %>
         <div class="col-xs-12 col-sm-4">
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path aphoto %>');">
-            <div class="card-category">
-              <p class="pricehighlights"><%= tool.price_per_day %> € / jour</p>
+          <div class="card card-tool" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path aphoto %>');">
+            <div class="card-tool-infos">
+              <div class="card-tool-price">
+                <p class="pricehighlights"><%= tool.price_per_day %> € / jour</p>
+              </div>
+              <div class="card-tool-name">
+                <h4><%= tool.name %></h4>
+              </div>
             </div>
-            <div class="card-description">
-              <h2><%= tool.name %></h2>
+            <div class="card-tool-reservation">
+              <% if tool.reservations.empty? %>
+                <h5>No reservations yet !</h5>
+              <% else %>
+                <% reservation = tool.reservations.first %>
+                <% user = User.find(reservation.user_id) %>
+                <h5>Next Reservation</h5>
+                <p>Name: <%= user.name %></p>
+                <p>Date: <%= reservation.start_date %>, pour <%= reservation.duration %> jour(s)</p>
+              <% end %>
             </div>
-            <div class="card-reservation">
-              <p class="cityhighlights">
-                </p>
-            </div>
+            <%= link_to " ", tool_path(tool.id), class:"card-tool-link" %>
           </div>
-          <%= link_to " ", tool_path(tool.id), class:"card-link" %>
+          <div class="tool-next-reservation">
+            <%= link_to "Next Reservations", tools_path, class:"btn btn-primary btn-sm btn-card-tool" %>
+          </div>
         </div>
       <% end %>
     </div>
