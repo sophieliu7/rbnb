@@ -49,10 +49,10 @@ resa.save!
 
 
 puts "create review"
-review1 = Review.new(reservation: Reservation.first , feedback:"outil en bon etat et vendeur sympa", rating:5)
+review1 = Review.new(reservation: Reservation.first , feedback:"c est super jai pu travailler et finir mes travaux.", rating:5)
 review1.save!
 
-review2 = Review.new(reservation: Reservation.first, feedback:"très bonne experience", rating:4)
+review2 = Review.new(reservation: Reservation.first, feedback:"merci encore", rating:4)
 review2.save!
 
 

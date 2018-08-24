@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
   resources :tools do
-    resources :reservations
+    resources :reservations do
+        resources :reviews, only: [:new, :create]
+      end
   end
 
   get "dashboard", to: 'pages#dashboard'

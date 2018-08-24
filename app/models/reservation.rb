@@ -1,6 +1,7 @@
 class Reservation < ApplicationRecord
   belongs_to :tool
   belongs_to :user
+  has_one :review
 
   validates :start_date, presence: true
   validates :duration, presence: true
