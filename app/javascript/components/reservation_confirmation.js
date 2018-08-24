@@ -1,6 +1,9 @@
 function ConfirmInfo() {
   const start_date = document.getElementById("reservation_start_date");
   const duration = document.getElementById("reservation_duration");
+  const price = document.getElementById("reservation_price").value;
+  console.log(parseInt(price)*45);
+
 
   const field_date = document.getElementById("field-date");
   const field_duration = document.getElementById("field-duration");
@@ -13,20 +16,13 @@ function ConfirmInfo() {
     field_date.innerHTML = ' <i class="fas fa-calendar-alt"></i>  Location à partir du : ' + data;
   });
 
-  console.log(field_duration);
 
-  field_duration.addEventListener("blur", (event) => {
-    // console.log("HHEHHE");
+  duration.addEventListener("keyup", (event) => {
     const data = duration.value;
-    console.log(data);
-    // const date = start_date.value;
-     field_duration.innerText =  data ;
-    // field_duration.innerHTML = '<i class="fas fa-clock"></i> Durée : ' + duration + " jours";
-    // field_price.innerHTML = '<i class="fas fa-money-bill-wave"></i> Montant' + duration * 90 + " €";
-    // field_endDate.innerText = "Fin : " + data_date + data ;
+    const price_total = data * parseInt(price);
+    field_duration.innerHTML = '<i class="fas fa-clock"></i> Durée : ' + data + " jours";
+    field_price.innerHTML = '<i class="fas fa-money-bill-wave"></i> Montant : ' + price_total + " €";
   });
-
-
 
 
 }
