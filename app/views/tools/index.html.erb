@@ -36,13 +36,13 @@
             <h2> <%= tool.name %> </h2>
             <p> <%= tool.description.first(110) %> </p>
           </div>
-          <i class="far fa-user-circle card-user"></i>
-          <%= link_to " ", tool_path(tool.id), class:"card-link" %>
+            <i class="far fa-user-circle card-user"></i>
+            <%= link_to " ", tool_path(tool.id), class:"card-link" %>
           <div class="card-username">
-          <p><%= tool.user.name %></p>
+            <p><%= tool.user.name %></p>
           </div>
         </div>
       </div>
-        <% end %>
+  <% end %>
     </div>
   </div>

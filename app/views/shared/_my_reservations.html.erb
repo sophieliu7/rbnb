@@ -1,9 +1,9 @@
-<div class="reservations-list"></div>
+<div class="reservations-list">
 
-<% count = 1 %>
-<% if current_user.reservations.length < 1 %>
-  <h4>Aucune résevation</h4>
-<% else %>
+  <% count = 1 %>
+  <% if current_user.reservations.length < 1 %>
+    <h4>Aucune résevation</h4>
+  <% else %>
     <% current_user.reservations.each do |reservation| %>
       <% tool = Tool.find(reservation.tool_id) %>
       <% if tool.photo.url.nil? %>
@@ -15,7 +15,7 @@
         <div class="message-circle">
           <strong><%= count %></strong>
         </div>
-        <div class="message-pic" style="background-image: linear-gradient(-225deg, rgba(171, 186, 171, 0.04) 0%, rgba(255, 255, 255, 0.04) 50%), url('<%= cl_image_path aphoto %>');"></div>
+        <div class="message-pic" style="background-image: linear-gradient(-225deg, rgba(171, 186, 171, 0.04) 0%, rgba(255, 255, 255, 0.04) 50%), url('<%= cl_image_path aphoto, crop: :fill; %>');"></div>
         <div class="message-body">
           <h4><%= tool.name.capitalize %></h4>
           <p><strong>Reservation à partir du: <%= reservation.start_date %></strong></p>
@@ -28,8 +28,8 @@
       </div>
       <% count += 1 %>
     <% end %>
-<% end %>
+  <% end %>
 
-
+</div>
 
 
