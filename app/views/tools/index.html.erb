@@ -5,44 +5,61 @@
 
   <%= form_tag tools_path, method: :get do %>
   <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
+  params[:query],
+  class: "form-control",
     placeholder: "Chercher un outil ou un lieu..."
-  %>
-  <% end %>
+    %>
+    <% end %>
 
-<br>
-
-
-<div class="row">
-  <% @tools.each do |tool| %>
-    <div class="col-xs-12 col-sm-4">
-      <!-- insert <div class="card"> -->
-
-      <% if tool.photo.url.nil? %>
-      <% aphoto = "https://res.cloudinary.com/dcmexvwbg/image/upload/v1534942802/np3zybbynuosmuvnj4nt.jpg" %>
-      <% else %>
-      <% aphoto = tool.photo %>
-      <% end %>
+    <br>
 
 
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path aphoto, height: 300, width: 400 , crop: :fill %>'); background-size: auto 100% ; background-position: left top; ">
-        <div class="card-category">
-          <p class="pricehighlights"><%= tool.price_per_day %> € / jour</p></div>
-        <div class="card-place">
-        <p class="cityhighlights"><%= tool.place %></p>
-        </div>
-          <div class="card-description">
-            <h2> <%= tool.name %> </h2>
-            <p> <%= tool.description.first(110) %> </p>
+    <div class="container-map-tools">
+
+<!--################### MAP ########################## -->
+
+      <div
+      id="map"
+      style="width: 40%;
+      height: 600px;"
+      data-markers="<%= @markers.to_json %>"
+      ></div>
+
+
+
+<!--################### TOOLS ########################## -->
+ <div class="cards-container">
+      <div class="row">
+        <% @tools.each do |tool| %>
+        <div class="col-xs-12 col-sm-4">
+          <!-- insert <div class="card"> -->
+
+            <% if tool.photo.url.nil? %>
+            <% aphoto = "https://res.cloudinary.com/dcmexvwbg/image/upload/v1534942802/np3zybbynuosmuvnj4nt.jpg" %>
+            <% else %>
+            <% aphoto = tool.photo %>
+            <% end %>
+
+
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path aphoto, height: 300, width: 400 , crop: :fill %>'); background-size: auto 100% ; background-position: left top; ">
+              <div class="card-category">
+                <p class="pricehighlights"><%= tool.price_per_day %> € / jour</p></div>
+                <div class="card-place">
+                  <p class="cityhighlights"><%= tool.place %></p>
+                </div>
+                <div class="card-description">
+                  <h2> <%= tool.name %> </h2>
+                  <p> <%= tool.description.first(110) %> </p>
+                </div>
+                <i class="far fa-user-circle card-user"></i>
+                <%= link_to " ", tool_path(tool.id), class:"card-link" %>
+                <div class="card-username">
+                  <p><%= tool.user.name %></p>
+                </div>
+              </div>
+            </div>
+            <% end %>
           </div>
-          <i class="far fa-user-circle card-user"></i>
-          <%= link_to " ", tool_path(tool.id), class:"card-link" %>
-          <div class="card-username">
-          <p><%= tool.user.name %></p>
           </div>
         </div>
-      </div>
-        <% end %>
     </div>
-  </div>
