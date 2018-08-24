@@ -11,6 +11,7 @@
   margin-top: 20px;
 }
 .tool-picture {
+  margin-top: 30px;
   flex-basis: 400px;
   min-height: 550px;
   background-size: cover !important;
@@ -77,26 +78,33 @@
 }
 
 .flexreviewmap {
+  border-top: 1px solid #D3D4D6;
 display:flex;
 flex-direction:row;
 flex-wrap:wrap;
 margin-top: 30px;
 justify-content: space-around;
+margin-bottom: 40px;
+margin-right: 50px;
+margin-left: 50px;
 }
 
 .flexfirstitem {
 
 padding: 10px 40px;
-border-right: 1px solid #848484;
-border-left: 1px solid #848484;
-max-width: 520px;
+// border-right: 1px solid #848484;
+// border-left: 1px solid #848484;
+width: 50%;
+  h2 {
+    margin-left: 20px;
+  }
 }
 
 .flexseconditem {
-flex-basis: 400px;
-max-width: 520px;
+// flex-basis: 400px;
+width: 50%;
 padding: 10px 30px;
-background-color:#FFFFFF;
+// background-color:#FFFFFF;
 }
 
 
@@ -146,4 +154,15 @@ animation: transition 1s ease-in-out 2s forwards;
 .modal-content{
 padding: 40px;
 
+}
+.btn-review {
+  background-color: $green;
+  border: 1px solid $green;
+  color: white;
+}
+.btn-review:hover {
+  opacity: 0.9;
+  background-color: #66BC62;
+  // color: #eef2f3;
+  border-color: #66BC62;
 }
