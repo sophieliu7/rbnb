@@ -1,29 +1,31 @@
 <div class="user-tool-info">
-  <div class="row">
-    <% current_user.tools.each do |tool|%>
-      <% if tool.photo.url.nil? %>
-        <% aphoto = "https://res.cloudinary.com/dcmexvwbg/image/upload/v1534942802/np3zybbynuosmuvnj4nt.jpg" %>
-      <% else %>
-        <% aphoto = tool.photo %>
-      <% end %>
-
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path aphoto, height: 300, width: 400 , crop: :fill %>'); background-size: auto 100% ; background-position: left top; ">
-        <div class="card-category">
-          <p class="pricehighlights"><%= tool.price_per_day %> € / jour</p></div>
-          <div class="card-place">
-            <p class="cityhighlights"><%= tool.place %></p>
+  <% tools = current_user.tools %>
+  <% if tools.empty? %>
+    <h4>No Tools Yet</h4>
+  <% else %>
+    <div class="row">
+      <% tools.each do |tool|%>
+        <% if tool.photo.url.nil? %>
+          <% aphoto = "https://res.cloudinary.com/dcmexvwbg/image/upload/v1534942802/np3zybbynuosmuvnj4nt.jpg" %>
+        <% else %>
+          <% aphoto = tool.photo %>
+        <% end %>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path aphoto %>');">
+            <div class="card-category">
+              <p class="pricehighlights"><%= tool.price_per_day %> € / jour</p>
+            </div>
+            <div class="card-description">
+              <h2><%= tool.name %></h2>
+            </div>
+            <div class="card-reservation">
+              <p class="cityhighlights">
+                </p>
+            </div>
           </div>
-          <div class="card-description">
-            <h2> <%= tool.name %> </h2>
-            <!-- <p> </p> -->
-          </div>
-          <i class="far fa-user-circle card-user"></i>
           <%= link_to " ", tool_path(tool.id), class:"card-link" %>
-          <div class="card-username">
-            <p></p>
-          </div>
         </div>
-      </div>
-    <% end %>
-  </div>
+      <% end %>
+    </div>
+  <% end %>
 </div>
