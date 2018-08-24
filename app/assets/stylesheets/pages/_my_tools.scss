@@ -1,14 +1,15 @@
 .card-tool {
   margin-bottom: 0;
 }
-  .card-tool-infos {
-  display: flex;
-  flex-direction: row;
+.card-tool-infos {
+  display: block;
+  // flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  margin: 15px 10px;
 }
 .card-tool-price {
-  margin: 8px 10px;
+  padding-top: 8px;
 }
 .card-tool-name {
   margin-right: 10px;
