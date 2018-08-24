@@ -6,6 +6,8 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    @tools = current_user.tools
+    @reservations = current_user.reservations
   end
 
 end

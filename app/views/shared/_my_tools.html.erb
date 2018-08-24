@@ -1,10 +1,9 @@
 <div class="user-tool-info">
-  <% tools = current_user.tools %>
-  <% if tools.empty? %>
+  <% if @tools.empty? %>
     <h4>No Tools Yet</h4>
   <% else %>
     <div class="row">
-      <% tools.each do |tool|%>
+      <% @tools.each do |tool|%>
         <% if tool.photo.url.nil? %>
           <% aphoto = "https://res.cloudinary.com/dcmexvwbg/image/upload/v1534942802/np3zybbynuosmuvnj4nt.jpg" %>
         <% else %>
@@ -21,10 +20,10 @@
               </div>
             </div>
             <div class="card-tool-reservation">
-              <% if tool.reservations.empty? %>
+              <% reservation = tool.next_reservation %>
+              <% if reservation.nil? %>
                 <h5>No reservations yet !</h5>
               <% else %>
-                <% reservation = tool.reservations.first %>
                 <% user = User.find(reservation.user_id) %>
                 <h5>Next Reservation</h5>
                 <p>Name: <%= user.name %></p>
@@ -38,6 +37,7 @@
           </div>
 
           <!-- Modal -->
+
           <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
@@ -54,7 +54,6 @@
               </div>
             </div>
           </div>
-
         </div>
       <% end %>
     </div>
