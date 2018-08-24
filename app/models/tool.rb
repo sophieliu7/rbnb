@@ -29,7 +29,7 @@ class Tool < ApplicationRecord
   include PgSearch
 
   pg_search_scope :global_search,
-      against: [ :name, :description ],
+      against: [ :name, :description, :category ],
       associated_against: {
         user: [ :name, :first_name, :last_name, :address ]
       },
