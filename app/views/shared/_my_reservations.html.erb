@@ -17,7 +17,7 @@
         </div>
         <div class="message-pic" style="background-image: linear-gradient(-225deg, rgba(171, 186, 171, 0.04) 0%, rgba(255, 255, 255, 0.04) 50%), url('<%= cl_image_path aphoto, crop: :fill; %>');"></div>
         <div class="message-body">
-          <h4><%= tool.name.capitalize %></h4>
+          <h4><%= link_to tool.name.capitalize, tool_path(tool.id) %></h4>
           <p><strong>Reservation à partir du: <%= reservation.start_date %></strong></p>
           <p><strong>Durée de la réservation: <%= reservation.duration %> jours</strong></p>
           <p>Nom du propriétaire: <%= tool.user.name %></p>
