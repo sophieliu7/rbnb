@@ -9,11 +9,16 @@
         </div>
         <div class="col-md-6">
           <div class="edit-description" id="message">
-            <%= f.input :category %>
-            <%= f.input :sub_category %>
+            <%= f.input :category, collection: [ 'Outils',
+              'Jardinage',
+              'Matériel de Rénovation',
+              'Matériel Entretien'
+            ] %>
             <%= f.input :description %>
           </div>
           <%= f.submit "Send", class: "btn btn-primary" %>
         </div>
       <% end %>
     </div>
+
+

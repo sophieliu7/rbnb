@@ -1,1 +1,35 @@
-<p>my reservations</p>
+<div class="reservations-list">
+
+  <% count = 1 %>
+  <% if current_user.reservations.length < 1 %>
+    <h4>Aucune résevation</h4>
+  <% else %>
+    <% current_user.reservations.each do |reservation| %>
+      <% tool = Tool.find(reservation.tool_id) %>
+      <% if tool.photo.url.nil? %>
+        <% aphoto = "https://res.cloudinary.com/dcmexvwbg/image/upload/v1534942802/np3zybbynuosmuvnj4nt.jpg" %>
+      <% else %>
+        <% aphoto = tool.photo %>
+      <% end %>
+      <div class="message">
+        <div class="message-circle">
+          <strong><%= count %></strong>
+        </div>
+        <div class="message-pic" style="background-image: linear-gradient(-225deg, rgba(171, 186, 171, 0.04) 0%, rgba(255, 255, 255, 0.04) 50%), url('<%= cl_image_path aphoto, crop: :fill; %>');"></div>
+        <div class="message-body">
+          <h4><%= tool.name.capitalize %></h4>
+          <p><strong>Reservation à partir du: <%= reservation.start_date %></strong></p>
+          <p><strong>Durée de la réservation: <%= reservation.duration %> jours</strong></p>
+          <p>Nom du propriétaire: <%= tool.user.name %></p>
+        </div>
+        <div class="message-status">
+          <h3 class="price"><%= reservation.total_price %>€</h3>
+        </div>
+      </div>
+      <% count += 1 %>
+    <% end %>
+  <% end %>
+
+</div>
+
+

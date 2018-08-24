@@ -4,7 +4,7 @@
 
   <h1>
     <% if @tool.reservations.length > 1 %>
-    <%= @tool.reservations.length %> réservations pour <%= @tool.name %>
+    <%= @tool.reservations.length %> réservations
     <% elsif  @tool.reservations.length == 1 %>
     <%=   @tool.reservations.length %> réservation pour <%= @tool.name %>
     <% else %>

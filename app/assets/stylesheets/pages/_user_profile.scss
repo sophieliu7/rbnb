@@ -5,12 +5,18 @@
   display: flex;
 }
 .user-main-info {
-  margin: 20px 0;
+  // margin: 20px 0;
   justify-content: space-between;
-  // border: 1px solid $green;
+  border: 1px solid #8e9eab;
   max-width: 50%;
+  padding: 10px;
+  border-radius: 5px;
 }
 .user-pic {
-  margin: 20px 0;
+  // margin: 20px 0;
   height: 50vh;
+
+}
+.pic-pic {
+  border-radius: 5px;
 }

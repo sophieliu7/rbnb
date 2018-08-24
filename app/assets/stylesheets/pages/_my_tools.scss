@@ -1,0 +1,54 @@
+.card-tool {
+  margin-bottom: 0;
+}
+.card-tool-infos {
+  display: block;
+  // flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 10px;
+}
+.card-tool-price {
+  padding-top: 8px;
+}
+.card-tool-name {
+  margin-right: 10px;
+}
+.card-tool-reservation {
+  margin-top: 25px;
+  margin-left: 10px;
+  h5 {
+    font-size: 18px;
+  }
+  p {
+    font-size: 14px;
+  }
+}
+.btn-card-tool {
+  background-color: #8e9eab;
+  border-color: #8e9eab;
+  color: #eef2f3;
+  width: 100%;
+  height: 100%;
+}
+.btn-card-tool:hover {
+  opacity: 0.9;
+  background-color: $green;
+  color: #eef2f3;
+  border-color: $green;
+  transition: 0.3s;
+}
+.card-tool-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  background: black;
+  opacity: 0;
+}
+.card-tool-link:hover {
+  opacity: 0.2;
+  transition: 0.3s;
+}
