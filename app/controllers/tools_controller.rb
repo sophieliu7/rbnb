@@ -4,12 +4,15 @@ class ToolsController < ApplicationController
 
 #################################################################
   def index
+
+    image = 'http://res.cloudinary.com/dcmexvwbg/image/upload/c_scale,w_20/v1535114910/i66o2ma9si7efyt369ir.png'
+
     if params[:query].present?
       @tools = policy_scope(Tool).global_search(params[:query])
       @markers = []
       @tools.each do |tool|
         unless tool.user.latitude.nil? || tool.user.longitude.nil?
-        @markers << {lat: tool.user.latitude, lng: tool.user.longitude}
+        @markers << {lat: tool.user.latitude, lng: tool.user.longitude, icon: image }
       end
     end
     else
@@ -17,18 +20,11 @@ class ToolsController < ApplicationController
       @markers = []
       @tools.each do |tool|
         unless tool.user.latitude.nil? || tool.user.longitude.nil?
-        @markers << {lat: tool.user.latitude, lng: tool.user.longitude}
+        @markers << {lat: tool.user.latitude, lng: tool.user.longitude, icon: image}
       end
     end
     end
 
-  # Creation de la Map avec les markers sur INDEX
-    # @markers = []
-    # @tools.each do |tool|
-    #   unless tool.user.latitude.nil? || tool.user.longitude.nil?
-    #   @markers << {lat: tool.user.latitude, lng: tool.user.longitude}
-    #   end
-    # end
 
   end
 
@@ -51,10 +47,13 @@ class ToolsController < ApplicationController
     end
 
     # Creation Map
+
+    image = 'http://res.cloudinary.com/dcmexvwbg/image/upload/c_scale,w_20/v1535114910/i66o2ma9si7efyt369ir.png'
+
     if @user.latitude.nil? || @user.longitude.nil?
       @markers = []
     else
-      @markers = [{lat: @user.latitude, lng: @user.longitude}]
+      @markers = [{lat: @user.latitude, lng: @user.longitude, icon: image}]
     end
     @reviews = Review.where(reservation_id: @reservations)
   end
