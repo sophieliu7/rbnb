@@ -35,12 +35,15 @@
     <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
 
 
-
-
     <!-- Avatar with dropdown menu -->
     <div class="navbar-wagon-item">
       <div class="dropdown">
-        <i class="fas fa-user-circle" id="navbar-wagon-menu" data-toggle="dropdown"></i>
+        <% if current_user.photo? %>
+          <%= cl_image_tag current_user.photo, class: "avatar", id: "navbar-wagon-menu", data: {toggle: "dropdown"}, width: 40, height: 40 %>
+        <% else %>
+          <i class="fas fa-user-circle" id="navbar-wagon-menu" data-toggle="dropdown"></i>
+        <% end %>
+
         <!-- <p><%# image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", data: { toggle: "dropdown" } %> </p -->
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
