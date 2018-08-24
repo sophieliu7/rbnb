@@ -31,7 +31,7 @@ class Tool < ApplicationRecord
   pg_search_scope :global_search,
       against: [ :name, :description ],
       associated_against: {
-        user: [ :name, :first_name, :last_name, :address ]
+        user: [ :name, :first_name, :last_name, :address, :category ]
       },
       using: {
         tsearch: { prefix: true }
