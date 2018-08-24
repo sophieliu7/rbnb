@@ -1,0 +1,22 @@
+<!-- Modal -->
+<% if tool.reservations.empty? %>
+  <h5>No reservations yet !</h5>
+<% else %>
+  <% tool.reservations.each_with_index do |reservation, index| %>
+    <div class="message">
+      <div class="message-circle">
+        <strong>  <%= index +1 %></strong>
+      </div>
+      <div class="message-body">
+        <p><strong>Réservation à partir du  : <%= reservation.start_date %></strong>
+          <p><strong>Durée de la réservation  : <%= reservation.duration %> jours</strong></p>
+          <p>
+           Nom du client: <%= reservation.user.name %>
+         </p>
+       </div>
+       <div class="message-status">
+        <p class="price">Total Price: <%= reservation.total_price %> € </p>
+      </div>
+    </div>
+  <% end %>
+<% end %>
