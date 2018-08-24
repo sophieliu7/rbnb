@@ -44,9 +44,9 @@ ActiveRecord::Schema.define(version: 2018_08_24_111423) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photo"
     t.string "category"
     t.string "sub_category"
-    t.string "photo"
     t.index ["user_id"], name: "index_tools_on_user_id"
   end
 

@@ -36,4 +36,8 @@ class Tool < ApplicationRecord
       using: {
         tsearch: { prefix: true }
       }
+
+  def next_reservation
+    reservations.where('start_date > ?', Date.today).order(start_date: :asc).first
+  end
 end

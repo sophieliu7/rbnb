@@ -1,10 +1,9 @@
 <div class="user-tool-info">
-  <% tools = current_user.tools %>
-  <% if tools.empty? %>
+  <% if @tools.empty? %>
     <h4>No Tools Yet</h4>
   <% else %>
     <div class="row">
-      <% tools.each do |tool|%>
+      <% @tools.each do |tool|%>
         <% if tool.photo.url.nil? %>
           <% aphoto = "https://res.cloudinary.com/dcmexvwbg/image/upload/v1534942802/np3zybbynuosmuvnj4nt.jpg" %>
         <% else %>
@@ -21,10 +20,10 @@
               </div>
             </div>
             <div class="card-tool-reservation">
-              <% if tool.reservations.empty? %>
+              <% reservation = tool.next_reservation %>
+              <% if reservation.nil? %>
                 <h5>No reservations yet !</h5>
               <% else %>
-                <% reservation = tool.reservations.first %>
                 <% user = User.find(reservation.user_id) %>
                 <h5>Next Reservation</h5>
                 <p>Name: <%= user.name %></p>
@@ -34,27 +33,10 @@
             <%= link_to " ", tool_path(tool.id), class:"card-tool-link" %>
           </div>
           <div class="tool-next-reservation">
-            <button type="button" class="btn btn-primary btn-sm btn-card-tool" data-toggle="modal" data-target="#myModal">Next Reservation</button>
+            <!-- <button type="button" class="btn btn-primary btn-sm btn-card-tool" data-toggle="modal" data-target="#myModal">Next Reservation</button> -->
+            <%= link_to "Reservation History", "#myModal-#{tool.id}", class: "btn btn-primary btn-sm btn-card-tool", "data-toggle" => "modal" %>
+            <%= render "shared/modal_tools_resa", tool: tool%>
           </div>
-
-          <!-- Modal -->
-          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  <h4 class="modal-title" id="myModalLabel"><%= tool.name.capitalize %> reservation</h4>
-                </div>
-                <div class="modal-body">
-                  <%= render "shared/modal_tools_resa", tool: tool %>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-default btn-card-tool" data-dismiss="modal">Close</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
         </div>
       <% end %>
     </div>

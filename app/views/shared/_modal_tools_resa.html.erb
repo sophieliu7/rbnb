@@ -1,22 +1,36 @@
-<!-- Modal -->
-<% if tool.reservations.empty? %>
-  <h5>No reservations yet !</h5>
-<% else %>
-  <% tool.reservations.each_with_index do |reservation, index| %>
-    <div class="message">
-      <div class="message-circle">
-        <strong>  <%= index +1 %></strong>
+<div class="modal fade" id="myModal-<%= tool.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel"><%= tool.name.capitalize %> reservation</h4>
       </div>
-      <div class="message-body">
-        <p><strong>Réservation à partir du  : <%= reservation.start_date %></strong>
-          <p><strong>Durée de la réservation  : <%= reservation.duration %> jours</strong></p>
-          <p>
-           Nom du client: <%= reservation.user.name %>
-         </p>
-       </div>
-       <div class="message-status">
-        <p class="price">Total Price: <%= reservation.total_price %> € </p>
+      <div class="modal-body">
+        <% if tool.reservations.empty? %>
+          <h5>No reservations yet !</h5>
+        <% else %>
+          <% tool.reservations.each_with_index do |reservation, index| %>
+            <div class="message">
+              <div class="message-circle">
+                <strong>  <%= index +1 %></strong>
+              </div>
+              <div class="message-body">
+                <p><strong>Réservation à partir du  : <%= reservation.start_date %></strong>
+                  <p><strong>Durée de la réservation  : <%= reservation.duration %> jours</strong></p>
+                  <p>
+                   Nom du client: <%= reservation.user.name %>
+                 </p>
+               </div>
+               <div class="message-status">
+                <p class="price">Total Price: <%= reservation.total_price %> € </p>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default btn-card-tool" data-dismiss="modal">Close</button>
       </div>
     </div>
-  <% end %>
-<% end %>
+  </div>
+</div>
