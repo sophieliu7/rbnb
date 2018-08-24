@@ -8,11 +8,21 @@
   <!--     < input :start_date data-provide='datepicker'  %> -->
       <%= f.input :start_date, as: :string, input_html: {class: "datepicker"}%>
       <%= f.input :duration %>
-      <ul id="confirmation">
-        <li>Start date: </li>
-        <li>End date: </li>
-        <li>TOTAL PRICE : </li>
-      </ul>
+
+      <%= f.hidden_field :price, :value => @tool.price_per_day %>
+
+      <p id="field-date">
+        <i class="fas fa-calendar-alt"></i>
+      </p>
+
+      <p id="field-duration">
+        <i class="fas fa-clock"></i>
+      </p>
+
+      <p id="field-price">
+        <i class="fas fa-money-bill-wave"></i>
+      </p>
+
       <%= f.submit "Create reservation", class: "btn btn-primary tool-btn" %>
       <% end %>
   </div>
