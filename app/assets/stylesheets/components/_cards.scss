@@ -21,6 +21,9 @@ section {
   position: relative;
   margin-bottom: 25px;
   border-radius: 2px;
+  font-weight: bold;
+  margin-left: -5px;
+  margin-right: -5px;
 }
 .card-user {
   position: absolute;
@@ -39,7 +42,7 @@ section {
 
 .card-place{
   position: absolute;
-  top: 40px;
+  top: 41px;
   left: 10px;
   font-size: 10px;
   font-color: black;
@@ -62,6 +65,7 @@ section {
 }
 .card-description h2 {
   font-size: 24px;
+  font-weight: bold
 }
 .card-description p {
   font-size: 14px;

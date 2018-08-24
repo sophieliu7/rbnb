@@ -31,7 +31,7 @@
  <div class="cards-container">
       <div class="row">
         <% @tools.each do |tool| %>
-        <div class="col-xs-12 col-sm-4">
+        <div class="col-xs-12 col-sm-6 col-md-4">
           <!-- insert <div class="card"> -->
 
             <% if tool.photo.url.nil? %>
@@ -49,7 +49,7 @@
                 </div>
                 <div class="card-description">
                   <h2> <%= tool.name %> </h2>
-                  <p> <%= tool.description.first(110) %> </p>
+                  <p> <%= tool.description.first(50) %> </p>
                 </div>
                 <i class="far fa-user-circle card-user"></i>
                 <%= link_to " ", tool_path(tool.id), class:"card-link" %>
