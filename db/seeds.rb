@@ -23,7 +23,7 @@ address =["46  rue Bonneterie, MONTBÉLIARD", "13 villa gaudelet, paris", "36 ru
 puts "create users"
 users = []
 10.times do
-  user = User.new(email: Faker::Internet.email , password: Faker::Color.hex_color, name:Faker::FunnyName.name, address: address.sample)
+  user = User.new(email: Faker::Internet.email , password: "azerty", name:Faker::FunnyName.name, address: address.sample)
   user.save!
   users << user
 

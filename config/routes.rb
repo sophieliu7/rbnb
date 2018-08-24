@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
 
+  get 'reviews/new'
+  get 'reviews/create'
   resources :tools do
-    resources :reservations do
-        resources :reviews, only: [:new, :create]
-      end
+    resources :reservations
+    resources :reviews, only: [:new, :create]
   end
 
   get "dashboard", to: 'pages#dashboard'

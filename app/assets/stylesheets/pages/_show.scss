@@ -81,6 +81,7 @@ display:flex;
 flex-direction:row;
 flex-wrap:wrap;
 margin-top: 30px;
+justify-content: space-around;
 }
 
 .flexfirstitem {
@@ -88,12 +89,12 @@ margin-top: 30px;
 padding: 10px 40px;
 border-right: 1px solid #848484;
 border-left: 1px solid #848484;
-max-width: 500px;
+max-width: 520px;
 }
 
 .flexseconditem {
 flex-basis: 400px;
-max-width: 500px;
+max-width: 520px;
 padding: 10px 30px;
 background-color:#FFFFFF;
 }
@@ -124,4 +125,25 @@ hr {
   border: 0;
 }
 
+@keyframes transition {
+0%   { margin-left: -70px;
+  opacity:0;
+   }
+100% { margin-left: 0;
+  opacity:1;
+   }
+}
 
+.letcomment{
+width: 100%;
+margin-top:20px;
+background: #F7F8E0;
+padding: 10px;
+opacity:0;
+animation: transition 1s ease-in-out 2s forwards;
+}
+
+.modal-content{
+padding: 40px;
+
+}
