@@ -11,7 +11,8 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.reservation = @reservation
     @review.save
-    redirect_to "/dashboard"
+
+    redirect_to tool_path(params["tool_id"])
 
 =begin
     if review.save
