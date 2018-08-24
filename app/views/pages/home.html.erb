@@ -52,7 +52,7 @@
           </div>
         </div>
       </div>
-    <a href="#">Voir plus d'outils</a>
+    <%= link_to "Voir plus d'outils", tools_path(query: 'Outils') %>
     </section>
 
     <section id="materiel-renovation">
@@ -75,7 +75,7 @@
           <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path("ylz80jpfbgydpsqxbbdz") %>');">
             <!-- <div class="card-category">Popular</div> -->
             <div class="card-description">
-              <h2>Peinceaux</h2>
+              <h2>Pinceaux</h2>
               <!-- <p>Very cool city, the best</p> -->
             </div>
 
@@ -95,7 +95,7 @@
           </div>
         </div>
       </div>
-      <a href="#">Voir plus d'outils</a>
+      <%= link_to "Voir plus de matériels de rénovation", tools_path(query: 'Matériel de rénovation')%>
     </section>
 
     <%= render 'shared/flexboxes' %>
@@ -140,7 +140,7 @@
           </div>
         </div>
       </div>
-       <a href="#">Voir plus d'outils</a>
+       <%= link_to "Voir plus d'outils de jardinage", tools_path(query: "Jardinage") %>
     </section>
 
     <section id="materiel-entretien">
@@ -183,7 +183,7 @@
           </div>
         </div>
       </div>
-      <a href="#">Voir plus d'outils</a>
+      <%= link_to "Voir plus de matériels entretien", tools_path(query: 'Matériel entretien') %>
     </section>
 
 

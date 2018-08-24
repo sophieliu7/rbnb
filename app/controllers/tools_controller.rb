@@ -34,7 +34,6 @@ class ToolsController < ApplicationController
 
 #####################################################################
   def show
-
     @tool = Tool.find(params[:id])
     @user = @tool.user
     authorize @tool
@@ -57,11 +56,9 @@ class ToolsController < ApplicationController
     else
       @markers = [{lat: @user.latitude, lng: @user.longitude}]
     end
-
     @reviews = Review.where(reservation_id: @reservations)
-
-
   end
+
 
 #####################################################################
 
@@ -113,7 +110,7 @@ class ToolsController < ApplicationController
 
   private
 
-    def tool_params
-    params.require(:tool).permit(:name, :price_per_day, :description, :photo)
+  def tool_params
+    params.require(:tool).permit(:name, :price_per_day, :description, :photo, :category)
   end
 end

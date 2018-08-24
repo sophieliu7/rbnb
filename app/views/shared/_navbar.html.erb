@@ -15,50 +15,10 @@
 
           <div class="flex-item">
             <ul>
-              <hr>
-              <li><%= link_to "Outils", "/tools" %>
-                <ul>
-                  <li>Maçonnerie</li>
-                  <li>Perceuse</li>
-                  <li>Perforateur</li>
-                  <li>Scie et tronconneuse</li>
-                  <li>Visseuse-dévisseuse</li>
-                </ul>
-              </li>
-              <hr>
-              <li><%= link_to "Matériel de rénovation", "/tools"%>
-                <ul>
-                  <li>Décolleuse</li>
-                  <li>Pistolet peinture</li>
-                  <li>Ponceuse</li>
-                  <li>décapeuse</li>
-                  <li>Taille-haie</li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-
-
-          <div class="flex-item">
-            <ul>
-              <hr>
-              <li><%= link_to "Jardinage", "/tools" %>
-                <ul>
-                  <li>Broyeur</li>
-                  <li>Débroussailleuse</li>
-                  <li>Motoculteur</li>
-                  <li>Scarificateur</li>
-                  <li>Tondeuse</li>
-                </ul>
-              </li>
-              <hr>
-              <li><%= link_to "Matériel entretien", "/tools" %>
-                <ul>
-                  <li>Aspirateur</li>
-                  <li>Matériel haute pression</li>
-                  <li>Shampouineuse</li>
-                </ul>
-              </li>
+              <li><%= link_to "Outils", tools_path(query: 'Outils') %></li>
+              <li><%= link_to "Matériel de rénovation", tools_path(query: 'Matériel de rénovation')%></li>
+              <li><%= link_to "Jardinage", tools_path(query: 'Jardinage') %></li>
+              <li><%= link_to "Matériel entretien", tools_path(query: 'Matériel entretien') %></li>
             </ul>
           </div>
         </div>
