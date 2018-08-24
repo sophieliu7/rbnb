@@ -3,5 +3,5 @@
   <%= f.input :feedback %>
   <%= f.input :rating %>
   <%= f.input :reservation, input_html: { :value => @reservation_user.id} , as: :hidden  %>
-  <%= f.submit "add a review", class: "btn btn-primary" %>
+  <%= f.submit "add a review", class: "btn btn-primary btn-review" %>
 <% end %>
